@@ -1,0 +1,217 @@
+pi@minibian:~/bunget/src$ sudo ./bin/bunget 0
+sh: echo: I/O error
+Version 1.0.0 March 9 2017 
+done dirty work
+_send_cmd 
+                 stop inquire me!!!!!!!!!!! 
+
+<--[3]040400 
+reset 
+
+<--[4]01030C00 
+_reconfigure 
+_set_hci_filter 
+[]<=1400000020C10000000000400000 
+_set_event_mask 
+
+<--[12]01010C08FFFFFBFF07F8BF3D 
+{-->[7]040E0401010C00 
+    Event:4, subevent:14 
+    cc CMD_OPCODE_PACK(OCF_SET_EVENT_MASK,OGF_HOST_CTL) 
+BT-Mask:0000000000000000 
+HCI:        [EVT_CMD_COMPLETE]    } 
+_set_le_event_mask 
+
+<--[12]010120081F00000000000000 
+{-->[7]040E0401012000 
+    Event:4, subevent:14 
+    cc CMD_OPCODE_PACK(OCF_SET_EVENT_MASK,OGF_LE_CTL) 
+LE-Mask:0000000000000000 
+HCI:        [EVT_CMD_COMPLETE]    } 
+_read_version 
+
+<--[4]01011000 
+{-->[15]040E0C0101100007B600070F000922 
+    Event:4, subevent:14 
+    cc READ_LOCAL_VERSION_CMD 
+enable_adv 
+
+<--[5]010A200100 
+my_proc event:  onAdvertized:0 
+_set_adv_params 
+
+<--[19]0106200FA000A0000000000000000000000700 
+HCI:        [EVT_CMD_COMPLETE]    } 
+_write_le_host 
+
+<--[6]016D0C020100 
+{-->[7]040E04010A200C 
+    Event:4, subevent:14 
+    cc LE_SET_ADVERTISE_ENABLE_CMD 
+on_adv_enable = 12 
+HCI:        [EVT_CMD_COMPLETE]    } 
+_read_le_hosts 
+
+<--[4]016C0C00 
+{-->[7]040E0401062000 
+    Event:4, subevent:14 
+    cc LE_SET_ADVERTISING_PARAMETERS_CMD 
+on_adv_status = 4 
+HCI:        [EVT_CMD_COMPLETE]    } 
+_read_baddr 
+
+<--[4]01091000 
+{-->[7]040E04016D0C00 
+    Event:4, subevent:14 
+    cc WRITE_LE_HOST_SUPPORTED_CMD 
+READINGD LE 7, SIMUL 182 
+HCI:        [EVT_CMD_COMPLETE]    } 
+_le_read_buffer_size 
+
+<--[4]01022000 
+{-->[9]040E06016C0C000100 
+    Event:4, subevent:14 
+    cc READ_LE_HOST_SUPPORTED_CMD 
+WRITING LE: 7, SIMUL: 182 
+HCI:        [EVT_CMD_COMPLETE]    } 
+my_proc event:  onDeviceStatus:1 
+enable_adv 
+
+<--[5]010A200101 
+my_proc event:  onAdvertized:1 
+set_sca_res_data 
+
+<--[36]0109202008070862756E6765740000000000000000000000000000000000000000000000 
+{-->[13]040E0A01091000AFB281EB27B8 
+    Event:4, subevent:14 
+    cc READ_BD_ADDR_CMD 
+    BADDR: B8:27:EB:81:B2:AF 
+HCI:        [EVT_CMD_COMPLETE]    } 
+{-->[10]040E0701022000FB0008 
+    Event:4, subevent:14 
+    cc CMD_OPCODE_PACK(OCF_LE_READ_BUFFER_SIZE,OGF_LE_CTL) 
+  xxx  cc OCF_LE_READ_BUFFER_SIZE: _aclMtu=251, _aclPendingMax=8 
+HCI:        [EVT_CMD_COMPLETE]    } 
+{-->[7]040E04010A2000 
+    Event:4, subevent:14 
+    cc LE_SET_ADVERTISE_ENABLE_CMD 
+on_adv_enable = 0 
+HCI:        [EVT_CMD_COMPLETE]    } 
+{-->[7]040E0401092000 
+    Event:4, subevent:14 
+    cc LE_SET_SCAN_RESPONSE_DATA_CMD 
+on_scan_resp_datat_status = 0 
+HCI:        [EVT_CMD_COMPLETE]    } 
+set_adv_data 
+
+<--[36]010820200B0201060703001801183F120000000000000000000000000000000000000000 
+{-->[7]040E0401082000 
+    Event:4, subevent:14 
+    cc LE_SET_ADVERTISING_DATA_CMD 
+on_adv_data_status = 0 
+======= READY TO ACCEPT CONNECTIONS ====== 
+HCI:        [EVT_CMD_COMPLETE]    } 
+==================================================================================
+{-->[22]043E13010040000101CEBC0D3C615B28000000D00701 
+    Event:4, subevent:62 
+_onmeta 
+mm EVT_LE_CONN_COMPLETE 
+_onle_complette 
+cc HANDLE = 64 
+cc role = 1 
+cc address type = 0 
+cc address = 5B:61:3C:0D:BC:CE 
+cc interval = 50 
+cc latency = 0 
+cc supervision timeout = 2080 
+cc master clock accuracy = 1 
+accepted: 5B:61:3C:0D:BC:CE,* 
+HCI: EVT_LE_META_EVENT    } 
+{-->[7]040F0400011620 
+    Event:4, subevent:15 
+CMD_STATUS status:1 ncmd:22 opcode(C/G):120/0 
+HCI: EVT_CMD_STATUS    } 
+{-->[16]0240200B0007000400100100FFFF0028 
+REQ:  ----------> ATT_OP_READ_BY_GROUP_REQ 
+Adding service: 1 
+Adding service: 6 
+Adding service: 10 
+my_proc event: onServicesDiscovered 
+write_ack_packet 
+
+<--[29]02400018001400040011060100050000180600090001180A0013003F12 
+HCI: ACL_START    } 
+{-->[16]0240200B0007000400101400FFFF0028 
+REQ:  ----------> ATT_OP_READ_BY_GROUP_REQ 
+write_ack_packet 
+
+<--[14]024000090005000400011014000A 
+HCI: ACL_START    } 
+{-->[16]0240200B000700040008010005000228 
+REQ:  ----------> ATT_OP_READ_BY_TYPE_REQ
+write_ack_packet 
+
+<--[14]024000090005000400010801000A 
+HCI: ACL_START    } 
+{-->[13]043E0A0300400006000000D007 
+    Event:4, subevent:62 
+_onmeta 
+mm EVT_LE_CONN_UPDATE_COMPLETE 
+_onle_con_update_complette 
+uu handle = 64 
+uu interval = 7 
+uu latency = 0 
+uu supervision timeout = 2080 
+HCI: EVT_LE_META_EVENT    } 
+{-->[15]043E0C041A40000100000000000000 
+    Event:4, subevent:62 
+_onmeta 
+mm EVT_LE_READ_REMOTE_USED_FEATURES_COMPLETE 
+HCI: EVT_LE_META_EVENT    } 
+{-->[21]02400010000C00050012010800280038000000D007 
+REQ:  ----------> ATT_OP_WRITE_REQ
+write_ack_packet 
+
+<--[14]0240000900050004000112010003 
+HCI: ACL_START    } 
+{-->[16]0240200B000700040008010005000328 
+REQ:  ----------> ATT_OP_READ_BY_TYPE_REQ
+adding characteristics1: 2 
+adding characteristics1: 4 
+write_ack_packet 
+
+<--[25]02400014001000040009070200020300002A0400020500012A 
+HCI: ACL_START    } 
+{-->[15]0240200A0006000500130102000000 
+REQ:  ----------> ATT_OP_WRITE_RESP
+HCI: ACL_START    } 
+{-->[13]043E0A0300400038000000D007  
+    Event:4, subevent:62 
+_onmeta 
+mm EVT_LE_CONN_UPDATE_COMPLETE 
+_onle_con_update_complette 
+uu handle = 64 
+uu interval = 70 
+uu latency = 0 
+uu supervision timeout = 2080 
+
+HCI: EVT_LE_META_EVENT    }    <<<< === Here sends this status (1)
+{-->[7]040F0400010604 
+    Event:4, subevent:15 
+CMD_STATUS status:1 ncmd:6 opcode(C/G):4/e 
+
+HCI: EVT_CMD_STATUS    } 
+{-->[7]04050400400016    <<<< == ON R-PI 3 HCI Socket Sends EVT_DISCONN_COMPLETE
+    Event:4, subevent:5 
+enable_adv 
+
+<--[5]010A200101 
+my_proc event:  onAdvertized:1    
+my_proc event: onConnect: disconnected 
+
+HCI: EVT_DISCONN_COMPLETE    } 
+{-->[7]040E04010A2000 
+    Event:4, subevent:14 
+    cc LE_SET_ADVERTISE_ENABLE_CMD 
+on_adv_enable = 0 
+HCI:        [EVT_CMD_COMPLETE]    } 

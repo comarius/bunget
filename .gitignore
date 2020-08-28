@@ -1,0 +1,21 @@
+# Ignore CMAKE artifacts
+**/CMakeCache.txt
+**/CMakeFiles/
+**/cmake_install.cmake
+**/Makefile
+
+# Ignore artifact folders
+**/bin/
+link/
+
+# Ignore Netbeans files
+**/nbproject/
+
+# Ignore Apple files
+**/.DS_Store
+**/.AppleDouble/
+
+# Ignore codeblocks files
+**/*.cbp
+**/*.pro
+**/*.project
